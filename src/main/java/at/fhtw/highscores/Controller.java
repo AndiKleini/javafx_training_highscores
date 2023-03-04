@@ -2,6 +2,7 @@ package at.fhtw.highscores;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -21,6 +22,9 @@ public class Controller implements Initializable {
     public TextField usernameTextField;
     public TextField pointsTextField;
 
+    public Label invalidUsername;
+    public Label invalidPoints;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         viewModel.addListener(new FocusChangedListener() {
@@ -37,6 +41,9 @@ public class Controller implements Initializable {
 
         usernameTextField.textProperty().bindBidirectional(viewModel.getCurrentUsername());
         pointsTextField.textProperty().bindBidirectional(viewModel.getCurrentPoints());
+
+        invalidUsername.visibleProperty().bind(viewModel.getUsernameIsNotValid());
+        invalidPoints.visibleProperty().bind(viewModel.getIsPointsNotValidProperty());
     }
 
     public void saveAction(ActionEvent actionEvent) {

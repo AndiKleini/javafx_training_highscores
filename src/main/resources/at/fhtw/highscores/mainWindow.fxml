@@ -14,15 +14,17 @@
     <children>
         <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
         <TextField fx:id="usernameTextField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
-        <Label text="Points:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-        <TextField fx:id="pointsTextField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-        <Button defaultButton="true" onAction="#saveAction" GridPane.columnIndex="2" GridPane.rowIndex="1">Save</Button>
+        <Label fx:id="invalidUsername" style="-fx-text-fill:red" GridPane.columnIndex="1" GridPane.rowIndex="1">Please enter a valid username !</Label>
+        <Label text="Points:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <TextField fx:id="pointsTextField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <Label fx:id="invalidPoints" style="-fx-text-fill:red" GridPane.columnIndex="1" GridPane.rowIndex="3">Please enter valid points format !</Label>
+        <Button defaultButton="true" onAction="#saveAction" GridPane.columnIndex="1" GridPane.rowIndex="4">Save</Button>
 
         <TableView fx:id="tableView"
                    tableMenuButtonVisible="true"
                    GridPane.halignment="CENTER"
                    GridPane.valignment="CENTER"
-                   GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="2">
+                   GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="5">
             <columns>
                 <TableColumn fx:id="usernameColumn" prefWidth="150.0" text="Username"/>
                 <TableColumn fx:id="pointsColumn" prefWidth="75.0" text="Points"/>

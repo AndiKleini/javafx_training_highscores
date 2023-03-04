@@ -112,7 +112,21 @@ class MainViewModelTest {
                         assertEquals(points, ((TableCell) node).getText());
                 }
         );
-
     }
 
+    @Test
+    void invalid_username_entered_should_display_errormessage(FxRobot robot) {
+        final String invalidUsername = "";
+        new NodeQueryImpl().from(root).lookup("#usernameTextField").queryTextInputControl().setText(invalidUsername);
+        robot.clickOn(new NodeQueryImpl().from(root).lookup(ButtonMatchers.isDefaultButton()).queryButton());
+        assertTrue(new NodeQueryImpl().from(root).lookup("#invalidUsername").query().isVisible(), "Error not displayed.");
+    }
+
+    @Test
+    void valid_username_entered_should_not_display_errormessage(FxRobot robot) {
+        final String aValidUsername = "AValidUsername";
+        new NodeQueryImpl().from(root).lookup("#usernameTextField").queryTextInputControl().setText(aValidUsername);
+        robot.clickOn(new NodeQueryImpl().from(root).lookup(ButtonMatchers.isDefaultButton()).queryButton());
+        assertFalse(new NodeQueryImpl().from(root).lookup("#invalidUsername").query().isVisible(), "Error is displayed.");
+    }
 }
