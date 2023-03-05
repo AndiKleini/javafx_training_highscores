@@ -60,6 +60,7 @@ public class MainViewModel {
 
     public void saveDataToList(){
 
+
         isUsernameNotValid.set(this.currentUsername == null || this.currentUsername.get() == "");
         Pattern pattern = Pattern.compile("\\d*", Pattern.CASE_INSENSITIVE);
         Matcher matcher = pattern.matcher(this.currentPoints.get());

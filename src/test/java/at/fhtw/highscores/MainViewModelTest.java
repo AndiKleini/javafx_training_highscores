@@ -122,6 +122,7 @@ class MainViewModelTest {
         assertTrue(new NodeQueryImpl().from(root).lookup("#invalidUsername").query().isVisible(), "Error not displayed.");
     }
 
+
     @Test
     void valid_username_entered_should_not_display_errormessage(FxRobot robot) {
         final String aValidUsername = "AValidUsername";

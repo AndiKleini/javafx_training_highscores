@@ -46,6 +46,7 @@ public class Controller implements Initializable {
         invalidPoints.visibleProperty().bind(viewModel.getIsPointsNotValidProperty());
     }
 
+
     public void saveAction(ActionEvent actionEvent) {
         viewModel.saveDataToList();
         // don't put "requestFocus" logic in here!

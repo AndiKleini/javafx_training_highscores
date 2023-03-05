@@ -11,6 +11,7 @@
           prefHeight="400.0" prefWidth="400.0"
           xmlns="http://javafx.com/javafx/11.0.2"
           fx:controller="at.fhtw.highscores.Controller">
+
     <children>
         <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
         <TextField fx:id="usernameTextField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
